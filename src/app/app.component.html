@@ -1,6 +1,8 @@
 <input type="text" [(ngModel)]="title" />
 {{ title }}
 
+
+
 <div *NgIf="title !== 'sebas'">Esto es un div</div>
 
 <button (click)="addItem(title)">Add item</button>
@@ -19,6 +21,5 @@
 </ul>
 
 <div *ngFor="let product of products">
-  {{ product.title }}
-  <img src="{{ product.image }}" alt="" />
+  <app-product (addedToCart)="addedToCart($event)" [product]="product"></app-product>
 </div>

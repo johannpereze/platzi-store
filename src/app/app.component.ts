@@ -63,4 +63,10 @@ export class AppComponent {
   removeItem(index: number) {
     this.names.splice(index, 1);
   }
+
+  addedToCart(id: number){
+    console.log('product', id);
+    
+  }
+
 }
