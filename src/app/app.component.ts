@@ -9,6 +9,8 @@ import { Product } from './product.model';
 export class AppComponent {
   title = 'platzi-store';
 
+  power = 4;
+
   names = ['juan', 'luis', 'jose'];
 
   products: Product[] = [
@@ -64,9 +66,7 @@ export class AppComponent {
     this.names.splice(index, 1);
   }
 
-  addedToCart(id: number){
+  addedToCart(id: number) {
     console.log('product', id);
-    
   }
-
 }

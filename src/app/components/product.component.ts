@@ -4,11 +4,13 @@ import { Product } from '../product.model'; //es una interface que define un mod
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
-  //styleUrls: ['./product.component.scss'],
+  styleUrls: ['./product.component.scss'],
 })
 export class ProductComponent {
   @Input() product: Product = Input();
   @Output() addedToCart: EventEmitter<any> = new EventEmitter();
+
+  today = new Date()
 
   addToCart(){
     console.log('agregado al carrito');

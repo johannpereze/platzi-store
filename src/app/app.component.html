@@ -1,9 +1,11 @@
 <input type="text" [(ngModel)]="title" />
 {{ title }}
 
+<input type="text" [(ngModel)]="power" />
 
+<p>{{power | exponential}}</p>
 
-<div *NgIf="title !== 'sebas'">Esto es un div</div>
+<div *ngIf="title !== 'sebas'">Esto es un div</div>
 
 <button (click)="addItem(title)">Add item</button>
 
@@ -20,6 +22,10 @@
   </li>
 </ul>
 
-<div *ngFor="let product of products">
-  <app-product (addedToCart)="addedToCart($event)" [product]="product"></app-product>
+<div class="product-grid">
+  <app-product 
+  *ngFor="let product of products"
+  (addedToCart)="addedToCart($event)" 
+  [product]="product">
+  </app-product>
 </div>
